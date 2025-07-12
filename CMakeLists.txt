@@ -39,10 +39,10 @@ install(TARGETS
 
 
 # Launch files
-#install(TARGETS
-#  launch
-#  DESTINATION lib/${PROJECT_NAME}
-#)
+install(
+  DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}/
+)
 
 
 # Install Python modules

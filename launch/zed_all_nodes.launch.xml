@@ -1,0 +1,11 @@
+<launch>
+    <!-- Nós do pacote zed_vision_to_mavros -->
+    <node pkg="zed_vision_to_mavros" exec="zed_vision_to_mavros" name="zed_vision_to_mavros" output="screen" />
+    <node pkg="zed_vision_to_mavros" exec="transform_frames" name="transform_frames" output="screen" />
+
+    <!-- Incluindo o arquivo de lançamento do MAVROS -->
+    <include file="$(find-pkg-share mavros)/launch/apm.launch.xml" />
+
+    <!-- Incluindo o arquivo de lançamento da zed2i -->
+    <include file="$(find-pkg-share zed_wrapper)/launch/zed2i.launch.py"/>
+</launch>

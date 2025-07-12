@@ -7,7 +7,7 @@ class PosePublisher(Node):
     def __init__(self):
         super().__init__('pose_publisher')
         self.publisher_ = self.create_publisher(PoseStamped, '/zed/zed_node/pose', 10)
-        timer_period = 0.1  # segundos (10 Hz)
+        timer_period = 0.05  # segundos (10 Hz)
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.get_logger().info('Publicando PoseStamped no /zed/zed_node/pose...')
 
@@ -22,7 +22,7 @@ class PosePublisher(Node):
         # Define a posição (x, y, z)
         msg.pose.position.x = 1.0
         msg.pose.position.y = 2.0
-        msg.pose.position.z = 1.0
+        msg.pose.position.z = 0.0
 
         # Define a orientação (quaternion)
         msg.pose.orientation.x = 0.0
